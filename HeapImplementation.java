@@ -55,7 +55,7 @@ class MinHeap {
         }
     }
 
-    void heapify(int index) {
+    void minHeapify(int index) {
         int left = left(index);
         int right = right(index);
         int min = index;
@@ -67,7 +67,7 @@ class MinHeap {
             int temp = arr[min];
             arr[min] = arr[index];
             arr[index] = temp;
-            heapify(min);
+            minHeapify(min);
         }
     }
 
@@ -82,7 +82,7 @@ class MinHeap {
         arr[0] = arr[size - 1];
         arr[size - 1] = temp;
         size--;
-        heapify(0);
+        minHeapify(0);
         return arr[size];
     }
 
@@ -106,9 +106,9 @@ class MinHeap {
         extractMin();
     }
 
-    void buildHeap() {
+    void buildMinHeap() {
         for (int i = (size - 2) / 2; i >= 0; i--) {
-            heapify(i);
+            minHeapify(i);
         }
     }
 }
